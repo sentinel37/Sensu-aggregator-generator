@@ -9,7 +9,7 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
 |Secret Key|Line 10|
 |Key Name|Line 15 and 36|
 |AMI ID| Line 13 and 34|
-|Subnet ID|Line 16 and 37|
+|Public Subnet ID|Line 16 and 37|
 
 ### Usage:
   1. Clone repo
@@ -18,7 +18,7 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
   4. Update sensu.tf
   5. "terraform validate"
   6. "terraform apply"
-  7.
+  7. Attach a security group with custom TCP ports: 3000, 8080, 8081
   8. Within web browser navigate to: http://\<sensu-aggretator public ip\>:3000
 
 
