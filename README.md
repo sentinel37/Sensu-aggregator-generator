@@ -17,7 +17,7 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
   1. Clone repo
   2. cd into repo directory
   3. "terraform init"
-  4. Update sensu.tf
+  4. Update sensu.tf with the sensu.tf configuration table listed above
   5. "terraform validate"
   6. "terraform apply"
   7. Within web browser navigate to: http://\<sensu-aggretator public ip\>:3000
