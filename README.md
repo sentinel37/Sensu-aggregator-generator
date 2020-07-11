@@ -2,11 +2,18 @@
 
 This Terraform configuration will deploy two Sensu instances within AWS. One will be a aggregator of all instance metrics and the other will be a data generator. The Sensu Dasboard, from the Sensu aggregator instance, will monitor open ports every minutes and check if the instance is running every 20 seconds.
 
+### Requirements
+|Resource|Explanation|
+|--------|----------|
+|AWS Access Key|Permissions to launch instance and create security groups|
+|VPC with a public subnbet|Sensu Dashboard Connection|
+
+
 ### Default Sensu Dashboard Username and Password
 Username: admin
 
 Password: admin
-  
+
 ### sensu.tf configuration
 |Variable|Location|
 |--------|----------|
