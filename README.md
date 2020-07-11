@@ -4,3 +4,8 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
 
 |Sensu Configuration|
 |--------|----------|
+|Access Key|Line 9|
+|Secret Key|Line 10|
+|Key Name|Line 15 and 36|
+|AMI ID| Line 13 and 34|
+|Subnet ID|Line 16 and 37|
