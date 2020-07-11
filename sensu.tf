@@ -108,13 +108,13 @@ resource "aws_instance" "Sensu-Generator" {
 
 ############################# Not needed for the code #################################
 #Setting Output for Aggregator IP Address
-output "Aggregator" {
+output "Sensu_Aggregator" {
   value = aws_instance.Sensu-Aggregator.public_ip
 }
-output "Generator" {
+output "Sensu_Generator" {
   value = aws_instance.Sensu-Generator.public_ip
 }
-output "Sensu-SG-ID" {
+output "Sensu_SG_ID" {
   value = aws_security_group.sensu-sg.id
 }
 # Command to use on CLI: terraform output ip
