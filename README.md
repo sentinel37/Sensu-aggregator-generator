@@ -6,7 +6,7 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
 Username: admin
 
 Password: admin
-
+  
 ### sensu.tf configuration
 |Variable|Location|
 |--------|----------|
