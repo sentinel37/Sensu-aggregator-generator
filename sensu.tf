@@ -114,6 +114,9 @@ output "Aggregator" {
 output "Generator" {
   value = aws_instance.Sensu-Generator.public_ip
 }
+output "Sensu-SG-ID" {
+  value = aws_security_group.sensu-sg.id
+}
 # Command to use on CLI: terraform output ip
 
 
