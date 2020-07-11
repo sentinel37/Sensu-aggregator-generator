@@ -5,11 +5,13 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
 ### sensu.tf configuration
 |Variable|Location|
 |--------|----------|
-|Access Key|Line 9|
-|Secret Key|Line 10|
-|Key Name|Line 15 and 36|
-|AMI ID| Line 13 and 34|
-|Public Subnet ID|Line 16 and 37|
+|Access Key|Line 4|
+|Secret Key|Line 5|
+|Key Name|Line 56 and 78|
+|AMI ID| Line 54 and 76|
+|Public Subnet ID|Line 57 and 79|
+|VPC ID|Line 11|
+
 
 ### Usage:
   1. Clone repo

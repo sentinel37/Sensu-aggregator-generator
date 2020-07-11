@@ -1,19 +1,61 @@
-################################################################################
-#################################  USAGE  ######################################
-################################################################################
-###              Please update Lines 9,10,13,15,16,34,36,37
-
 
 provider "aws" {
   region     = "us-east-1"
   access_key = ""
   secret_key = ""
 }
+
+resource "aws_security_group" "sensu-sg" {
+  name        = "Sensu-SecurityGroup"
+  description = "Sensu Security Group"
+  vpc_id      = ""
+
+  ingress {
+    description = "Sensu Protocal"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "Sensu Protocal"
+    from_port   = 8081
+    to_port     = 8081
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "Generator Connections to Dashboard"
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "Generator Connections to Dashboard"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "Sensu_SG"
+  }
+}
+
 resource "aws_instance" "Sensu-Aggregator" {
-  ami           = "ami-098f16afa9edf40be"
-  instance_type = "t2.micro"
-  key_name      = ""
-  subnet_id     = ""
+  ami             = ""
+  instance_type   = "t2.micro"
+  key_name        = ""
+  subnet_id       = ""
+  security_groups = ["${aws_security_group.sensu-sg.id}"]
   tags = {
     Name        = "Sensu-Aggregator"
     Environment = "Test"
@@ -31,10 +73,11 @@ resource "aws_instance" "Sensu-Aggregator" {
 }
 
 resource "aws_instance" "Sensu-Generator" {
-  ami           = "ami-098f16afa9edf40be"
-  instance_type = "t2.micro"
-  key_name      = ""
-  subnet_id     = ""
+  ami             = ""
+  instance_type   = "t2.micro"
+  key_name        = ""
+  subnet_id       = ""
+  security_groups = ["${aws_security_group.sensu-sg.id}"]
   tags = {
     Name        = "Sensu-Generator"
     Environment = "Test"
