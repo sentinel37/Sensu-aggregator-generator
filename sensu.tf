@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "sensu-sg" {
-  name        = "Sensu-SecurityGroup"
+  name        = "Sensu-Security-Group"
   description = "Sensu Security Group"
   vpc_id      = ""
 
