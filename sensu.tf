@@ -46,7 +46,7 @@ resource "aws_security_group" "sensu-sg" {
   }
 
   tags = {
-    Name = "Sensu_SG"
+    Name = "Sensu Security Group"
   }
 }
 
