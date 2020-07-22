@@ -240,8 +240,8 @@ password = template.add_parameter(Parameter(
 #
 
 mappings = template.add_mapping('VPCDetails', {
-#CSN-ENV-C-45
-    "vpc-020c579684e42d332":{"SenseSG":"sg-0638ac1a9dbbde7b8"},
+
+    "VPC id":{"SenseSG":"Security Group ID"},
     })
 
 #
@@ -304,9 +304,6 @@ instance.Tags=[
     Tag("Name","Sensu-Aggregator-Box"),
     Tag("JIRA TICKET NUMBER:","###"),
     Tag("Developers","Dev Team"),
-    #Tag("AdministratorsGroup",FindInMap("VPCDetails", Ref(vpc_param), "IMPLAdminGroup")),
-    #Tag("OU",FindInMap("VPCDetails", Ref(vpc_param), "IMPLOU")),
-    #Tag("Hostname",Ref(hostname))
 ]
 
 #instance.IamInstanceProfile=Ref(sensu_role_profile)
