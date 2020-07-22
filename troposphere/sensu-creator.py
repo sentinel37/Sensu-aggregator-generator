@@ -74,7 +74,7 @@ keypair = template.add_parameter(Parameter(
     "KeyPair",
     Type="AWS::EC2::KeyPair::KeyName",
     Description="Key Pair",
-    Default="Learning"
+    Default=""
 ))
 
 #
@@ -88,7 +88,7 @@ amiid = template.add_parameter(Parameter(
     "AMIID",
     Type="AWS::EC2::Image::Id",
     Description="Get the Latest AMI ID",
-    Default='ami-000db10762d0c4c05'
+    Default=''
 
 ))
 
@@ -103,7 +103,7 @@ vpc_param = template.add_parameter(Parameter(
     "VpcId",
     Description="Choose Desired VPC",
     Type="AWS::EC2::VPC::Id",
-    Default="vpc-020c579684e42d332"
+    Default=""
 
 ))
 
@@ -119,7 +119,7 @@ cidr = template.add_parameter(Parameter(
     "VpcCIDR",
     Description= "VPC CIDR Block (eg 10.0.0.0/16)",
     Type="String",
-    Default="10.0.0.0/19",
+    Default="",
     AllowedPattern= '((\d{1,3})\.){3}\d{1,3}/\d{1,2}'
 ))
 
@@ -134,7 +134,7 @@ vpc_subnet = template.add_parameter(Parameter(
     "SubnetId",
     Description="Choose Subnet",
     Type="AWS::EC2::Subnet::Id",
-    Default="subnet-00287297fd68ee2f3"
+    Default=""
 
 ))
 
@@ -150,7 +150,7 @@ vpc_availibility_zone = template.add_parameter(Parameter(
     "AvailibilityZone",
     Description="Availability Zone for Monitoring Instance",
     Type="AWS::EC2::AvailabilityZone::Name",
-    Default="us-east-1b"
+    Default=""
 ))
 
 #
@@ -301,8 +301,8 @@ instance.InstanceType = Ref(instancetype)
 instance.KeyName = Ref(keypair)
 instance.Tags=[
     Tag("Name","Sensu-Aggregator-Box"),
-    Tag("JIRA TICKET NUMBER:","EXC-255"),
-    Tag("Developers","Eric Asongwed, Sean Isaac-Elder"),
+    Tag("JIRA TICKET NUMBER:","###"),
+    Tag("Developers","Dev Team"),
     #Tag("AdministratorsGroup",FindInMap("VPCDetails", Ref(vpc_param), "IMPLAdminGroup")),
     #Tag("OU",FindInMap("VPCDetails", Ref(vpc_param), "IMPLOU")),
     #Tag("Hostname",Ref(hostname))
@@ -326,8 +326,8 @@ instance1.InstanceType = Ref(instancetype)
 instance1.KeyName = Ref(keypair)
 instance1.Tags=[
     Tag("Name","Sensu-Data-Generator-Box"),
-    Tag("JIRA TICKET NUMBER:","EXC-255"),
-    Tag("Developers","Eric Asongwed, Sean Isaac-Elder"),
+    Tag("JIRA TICKET NUMBER:","###"),
+    Tag("Developers","Dev Team"),
     #Tag("OU",FindInMap("VPCDetails", Ref(vpc_param), "IMPLOU")),
     #Tag("Hostname",Ref(hostname))
 ]
