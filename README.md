@@ -37,3 +37,13 @@ Terraform will have to be installed on your local machine.
 
 ### Sensu Documentation:
 https://docs.sensu.io/sensu-go/latest/
+
+### Troposphere
+Within the /troposphere directory is the python script to generate a CloudFormation Template for the same deployment.
+
+|Setting up python virtual environment|
+|python3 -m venv venv|
+|source ./venv/bin/activate|
+|pip install troposphere awacs|
+|Generating CloudFormation template|python3 sensu-creator.py|
+|Generating CloudFormation template file|python3 sensu-creator.py>sensu-template.yaml|
