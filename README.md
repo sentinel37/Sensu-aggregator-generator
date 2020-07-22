@@ -42,10 +42,12 @@ https://docs.sensu.io/sensu-go/latest/
 Within the /troposphere directory is the python script to generate a CloudFormation Template for the same deployment.
 
 ### Setting up python virtual environment
-python3 -m venv venv
-source ./venv/bin/activate
-pip install troposphere awacs
+1. python3 -m venv venv
+2. source ./venv/bin/activate
+3. pip install troposphere awacs
 
-### Creating CloudFormation Template 
+### Creating CloudFormation Template
+
 Generating CloudFormation template: python3 sensu-creator.py
+
 Generating CloudFormation template file: python3 sensu-creator.py>sensu-template.yaml
