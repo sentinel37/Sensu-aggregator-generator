@@ -237,6 +237,7 @@ password = template.add_parameter(Parameter(
 # └───────────────────────────────────────────────────────────────────────────┘
 #
 
+#
 
 mappings = template.add_mapping('VPCDetails', {
 #CSN-ENV-C-45
@@ -328,11 +329,8 @@ instance1.Tags=[
     Tag("Name","Sensu-Data-Generator-Box"),
     Tag("JIRA TICKET NUMBER:","###"),
     Tag("Developers","Dev Team"),
-    #Tag("OU",FindInMap("VPCDetails", Ref(vpc_param), "IMPLOU")),
-    #Tag("Hostname",Ref(hostname))
 ]
 
-#instance.IamInstanceProfile=Ref(sensu_role_profile)
 instance1.AvailabilityZone=Ref(vpc_availibility_zone)
 instance1.SubnetId=Ref(vpc_subnet)
 instance1.SecurityGroupIds=[FindInMap("VPCDetails", Ref(vpc_param), "SenseSG")]
