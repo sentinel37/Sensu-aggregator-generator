@@ -11,11 +11,12 @@ This Terraform configuration will deploy two Sensu instances within AWS. One wil
 ### Usage:
   1. Clone repo
   2. cd into repo directory
-  3. "terraform init"
+  3. Run "terraform init" to initialize the directory
   4. Update sensu.tf with the sensu.tf configuration table listed below
-  5. "terraform validate"
-  6. "terraform apply"
+  5. "terraform validate" validate the terraform script
+  6. "terraform apply" to deploy the terrarom script
   7. Within web browser navigate to: http://\<sensu-aggretator public ip\>:3000
+  8. Run "terraform destroy" to remove all resources once completed. 
 
 ### sensu.tf configuration:
   |Variable|Location|
