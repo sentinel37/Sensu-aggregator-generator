@@ -3,6 +3,8 @@
 This Terraform configuration will deploy two Sensu instances within AWS. One will be a aggregator of all instance metrics and the other will be a data generator. The Sensu Dasboard, from the Sensu aggregator instance, will monitor open ports every minute and check if the instance is running every 20 seconds.
 
 ### Requirements:
+Terraform will have to be installed on your local machine.
+
 |Resource|Explanation|
 |--------|----------|
 |AWS Access Key|Permissions to launch instance and create security groups|
