@@ -1,4 +1,4 @@
-### Sensu AWS Terraform Deployment:
+### 1. Sensu AWS Terraform Deployment:
 
 This Terraform configuration will deploy two Sensu instances within AWS. One will be a aggregator of all instance metrics and the other will be a data generator. The Sensu Dasboard, from the Sensu aggregator instance, will monitor open ports every minute and check if the instance is running every 20 seconds.
 
@@ -38,7 +38,7 @@ Terraform will have to be installed on your local machine.
 ### Sensu Documentation:
 https://docs.sensu.io/sensu-go/latest/
 
-###   Troposphere
+### 2. Alternative Cloudformation Sense Deployment using Troposphere
           Within the /troposphere directory is the python script to generate a CloudFormation Template for the same deployment.
 
 ###       Setting up python virtual environment
